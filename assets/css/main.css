@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  @apply dark:text-white-light text-dark;
+}
+
+@theme static {
+  /* Font Family */
+  --font-family-simply-rounded: "Simply-Rounded", sans-serif;
+  --font-family-cairo: "Cairo", sans-serif;
+  --font-family-lexend: "lexend", sans-serif;
+
+  /* Primary Colors */
+  --color-primary: #6d2d87;
+  --color-primary-light: #7b4293;
+  --color-primary-light2: #8a569f;
+
+  /* Secondary Colors */
+  --color-secondary: #fdba4f;
+  --color-secondary-light: #fcc874;
+  --color-secondary-light2: rgba(252, 200, 116, 0.3);
+
+  /* Gray Scale */
+  --color-gray: #e5e7eb;
+  --color-light-gray: #f6e9ff;
+  --color-gray2: #f9fafb;
+
+  /* Dark Colors */
+  --color-dark: #2f2b33;
+  --color-dark-light: #0f172b;
+  --color-dark-default: #2d3748;
+  --color-frame-fill: #1d1d1b;
+  --color-frame-fill2: #575756;
+
+  /* Status Colors */
+  --color-success: #00ab55;
+  --color-success-light: #ddf5f0;
+  --color-success-dark-light: rgba(0, 171, 85, 0.15);
+
+  --color-danger: #e7515a;
+  --color-danger-light: #fff5f5;
+  --color-danger-dark-light: rgba(231, 81, 90, 0.15);
+
+  --color-warning: #e2a03f;
+  --color-warning-light: #fff9ed;
+  --color-warning-dark-light: rgba(226, 160, 63, 0.15);
+
+  --color-info: #2196f3;
+  --color-info-light: #e7f7ff;
+  --color-info-dark-light: rgba(33, 150, 243, 0.15);
+
+  --color-black: #0e1726;
+  --color-black-light: #e3e4eb;
+  --color-black-dark-light: rgba(14, 23, 38, 0.15);
+
+  --color-white: #ffffff;
+  --color-white-light: #e0e6ed;
+  --color-white-dark: #888ea8;
+
+  /* Text Colors */
+  --color-text: var(--color-dark);
+  --color-text-inverted: var(--color-white);
+}
