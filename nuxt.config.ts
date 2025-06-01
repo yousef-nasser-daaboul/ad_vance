@@ -4,15 +4,7 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
   colorMode: {
-    preference: "light", // default value of $colorMode.preference
-    fallback: "light", // fallback value if not system preference found
-    hid: "nuxt-color-mode-script",
-    globalName: "__NUXT_COLOR_MODE__",
-    componentName: "ColorScheme",
-    classPrefix: "",
-    classSuffix: "",
-    storage: "localStorage", // or 'sessionStorage' or 'cookie'
-    storageKey: "nuxt-color-mode",
+    preference: "light",
   },
   modules: [
     "@nuxt/content",
@@ -23,5 +15,26 @@ export default defineNuxtConfig({
     "@nuxt/scripts",
     "@nuxt/test-utils",
     "@nuxt/ui",
+    "@vite-pwa/nuxt",
   ],
+  pwa: {
+    manifest: {
+      name: "Ad-Vance",
+      short_name: "advance",
+      description: "Advance App for advertisement management",
+      icons: [
+        { src: "logo/logo_64x64.png", sizes: "64x64", type: "image/png" },
+        { src: "logo/logo_144x144.png", sizes: "144x144", type: "image/png" },
+        { src: "logo/logo_192x192.png", sizes: "192x192", type: "image/png" },
+        { src: "logo/logo_512x512.png", sizes: "512x512", type: "image/png" },
+      ],
+    },
+    workbox: {
+      navigateFallback: "/",
+    },
+    devOptions: {
+      enabled: true,
+      type: "module",
+    },
+  },
 });
