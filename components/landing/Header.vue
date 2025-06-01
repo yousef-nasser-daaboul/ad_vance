@@ -172,12 +172,6 @@ onMounted(async () => {
   );
   window.addEventListener("scrollend", addScrollListener, { once: true });
   addIsActiveClass(route.hash);
-
-  // set theme
-  if (colorMode.preference === "system") {
-    colorMode.preference = "light";
-    isDark.value = false;
-  }
 });
 
 onUnmounted(() => {
@@ -197,7 +191,7 @@ const colorMode = useColorMode();
 
 const isDark = computed({
   get() {
-    return colorMode.value === "dark";
+    return colorMode.preference === "dark";
   },
   set(_isDark: boolean) {
     colorMode.preference = _isDark ? "dark" : "light";
