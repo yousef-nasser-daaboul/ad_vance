@@ -17,6 +17,11 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vite-pwa/nuxt",
   ],
+  app: {
+    head: {
+      link: [{ rel: "icon", href: "/logo/logo.png" }],
+    },
+  },
   pwa: {
     manifest: {
       name: "Ad-Vance",
