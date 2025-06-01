@@ -172,6 +172,12 @@ onMounted(async () => {
   );
   window.addEventListener("scrollend", addScrollListener, { once: true });
   addIsActiveClass(route.hash);
+
+  // set theme
+  if (colorMode.preference === "system") {
+    colorMode.preference = "light";
+    isDark.value = false;
+  }
 });
 
 onUnmounted(() => {
