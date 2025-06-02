@@ -6,7 +6,7 @@
         <div class="flex items-center">
           <NuxtLink to="/" class="flex items-center space-x-2">
             <img src="/logo/full_logo.svg" alt="Logo" class="h-12 w-auto" />
-            <span class="text-xl font-bold">AdVance</span>
+            <!-- <span class="text-xl font-bold">AdVance</span> -->
           </NuxtLink>
         </div>
 
