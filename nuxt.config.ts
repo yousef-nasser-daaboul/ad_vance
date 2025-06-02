@@ -45,7 +45,7 @@ export default defineNuxtConfig({
       screenshots: [
         {
           src: "screenshots/desktop_screenshot_1.png",
-          sizes: "1387x720",
+          sizes: "1280x720",
           form_factor: "wide",
           type: "image/png",
         },
