@@ -36,14 +36,14 @@ export default defineNuxtConfig({
       screenshots: [
         {
           src: "screenshots/desktop_screenshot_1.png",
-          sizes: "1387x720",
+          sizes: "1280x720",
           type: "image/png",
           form_factor: "wide",
           label: "Desktop App View",
         },
         {
           src: "screenshots/mobile_screenshot_1.png",
-          sizes: "697x1280",
+          sizes: "720x1280",
           type: "image/png",
           label: "Mobile App View",
         },
