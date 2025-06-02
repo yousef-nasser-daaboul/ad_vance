@@ -23,9 +23,18 @@ export default defineNuxtConfig({
     },
   },
   pwa: {
+    includeAssets: [
+      "logo/logo_64x64.png",
+      "logo/logo_144x144.png",
+      "logo/logo_192x192.png",
+      "logo/logo_512x512.png",
+      "screenshots/desktop_screenshot_1.png",
+      "screenshots/mobile_screenshot_1.png",
+    ],
     manifest: {
       name: "Ad-Vance",
       short_name: "advance",
+      theme_color: "#ffffff",
       description: "Advance App for advertisement management",
       icons: [
         { src: "logo/logo_64x64.png", sizes: "64x64", type: "image/png" },
@@ -36,13 +45,13 @@ export default defineNuxtConfig({
       screenshots: [
         {
           src: "screenshots/desktop_screenshot_1.png",
-          sizes: "1387x720",
+          sizes: "1280x720",
           form_factor: "wide",
           type: "image/png",
         },
         {
           src: "screenshots/mobile_screenshot_1.png",
-          sizes: "697x1280",
+          sizes: "720x1280",
           form_factor: "narrow",
           type: "image/png",
         },
