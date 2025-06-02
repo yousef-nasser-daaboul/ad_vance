@@ -23,6 +23,10 @@ export default defineNuxtConfig({
     },
   },
   pwa: {
+    experimental: {
+      enableWorkboxPayloadQueryParams: true,
+    },
+    
     includeAssets: [
       "logo/logo_64x64.png",
       "logo/logo_144x144.png",
@@ -32,6 +36,7 @@ export default defineNuxtConfig({
       "screenshots/mobile_screenshot_1.png",
     ],
     manifest: {
+      
       name: "Ad-Vance",
       short_name: "advance",
       theme_color: "#ffffff",
@@ -51,7 +56,7 @@ export default defineNuxtConfig({
         },
         {
           src: "screenshots/mobile_screenshot_1.png",
-          sizes: "697x1280",
+          sizes: "720x1280",
           form_factor: "narrow",
           type: "image/png",
         },
