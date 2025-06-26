@@ -30,8 +30,8 @@
       </UButton>
       <p class="text-sm md:text-md mt-3">
         Are you a developer?
-        <NuxtLink class="text-secondary underline" href="for-developers">
-          THIS IS FOR YOU!
+        <NuxtLink class="text-secondary underline">
+          THIS IS FOR YOU! P
         </NuxtLink>
       </p>
     </div>

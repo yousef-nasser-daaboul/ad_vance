@@ -24,9 +24,8 @@ export default defineNuxtConfig({
   },
   pwa: {
     experimental: {
-      enableWorkboxPayloadQueryParams: true,
     },
-    
+
     includeAssets: [
       "logo/logo_64x64.png",
       "logo/logo_144x144.png",
@@ -36,7 +35,6 @@ export default defineNuxtConfig({
       "screenshots/mobile_screenshot_1.png",
     ],
     manifest: {
-      
       name: "Ad-Vance",
       short_name: "advance",
       theme_color: "#ffffff",
@@ -63,11 +61,40 @@ export default defineNuxtConfig({
       ],
     },
     workbox: {
-      navigateFallback: "/",
-    },
-    devOptions: {
-      enabled: true,
-      type: "module",
+      // Offline support is enabled by default, no need for 'offline: true'
+      // Configure caching strategies instead
+      globPatterns: ["**/*.{js,css,html,png,jpg,svg}"], // Skip _payload.json
+      globIgnores: [
+        "**/node_modules/**/*",
+        "sw.js",
+        "workbox-*.js",
+        "**/_payload.json",
+      ],
+      runtimeCaching: [
+        {
+          urlPattern: "https://your-api.com/.*",
+          handler: "NetworkFirst",
+          options: {
+            cacheName: "api-cache",
+            networkTimeoutSeconds: 10, // fallback to cache if network doesn't respond within 10s
+            expiration: {
+              maxEntries: 100,
+              maxAgeSeconds: 86400, // 24 hours
+            },
+          },
+        },
+        {
+          urlPattern: /\.(?:png|jpg|jpeg|svg|gif)$/,
+          handler: "CacheFirst",
+          options: {
+            cacheName: "image-cache",
+            expiration: {
+              maxEntries: 100,
+              maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days
+            },
+          },
+        },
+      ],
     },
   },
 });
